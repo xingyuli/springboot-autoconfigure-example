@@ -12,8 +12,8 @@ springbootseed.messaging:
 #    ios-api-key: value_of_baidu_push_ios_api_key
 #    ios-secret-key: value_of_baidu_push_ios_secret_key
 
-    # default value is DEVELOPMENT
-#    ios-deploy-status: DEVELOPMENT
+    # default value is development
+#    ios-deploy-status: development
 
 #    android-api-key: value_of_baidu_push_android_api_key
 #    android-secret-key: value_of_baidu_push_android_secret_key
@@ -27,7 +27,7 @@ springbootseed.messaging:
         ios-api-key: value_of_baidu_push_ios_api_key_1
         ios-secret-key: value_of_baidu_push_ios_secret_key_1
         # take precedence over the outermost 'ios-deploy-status'
-        ios-deploy-status: PRODUCT
+        ios-deploy-status: product
         android-api-key: value_of_baidu_push_android_api_key_1
         android-secret-key: value_of_baidu_push_android_secret_key_1
       -

@@ -1,6 +1,5 @@
 package com.example.app.controller
 
-import com.baidu.yun.push.model.PushRequest
 import com.example.app.dto.SpringBeanResource
 import com.example.app.dto.beanResource
 import com.mobisist.components.messaging.baidupush.*
