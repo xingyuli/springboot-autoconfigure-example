@@ -1,0 +1,56 @@
+logging.level:
+  com.mobisist.springbootseed.autoconfigure: DEBUG
+  com.mobisist.components.messaging: DEBUG
+
+springbootseed.messaging:
+  baidupush:
+    # outermost configuration
+
+    # default value is false, uses dummy implementation which is useful for debugging purpose
+#    enabled: false
+
+#    ios-api-key: value_of_baidu_push_ios_api_key
+#    ios-secret-key: value_of_baidu_push_ios_secret_key
+
+    # default value is DEVELOPMENT
+#    ios-deploy-status: DEVELOPMENT
+
+#    android-api-key: value_of_baidu_push_android_api_key
+#    android-secret-key: value_of_baidu_push_android_secret_key
+
+    # multi configurations
+    configurations:
+      -
+        name: foo
+        # take precedence over the outermost 'enabled'
+        enabled: true
+        ios-api-key: value_of_baidu_push_ios_api_key_1
+        ios-secret-key: value_of_baidu_push_ios_secret_key_1
+        # take precedence over the outermost 'ios-deploy-status'
+        ios-deploy-status: PRODUCT
+        android-api-key: value_of_baidu_push_android_api_key_1
+        android-secret-key: value_of_baidu_push_android_secret_key_1
+      -
+        name: bar
+        ios-api-key: value_of_baidu_push_ios_api_key_2
+        ios-secret-key: value_of_baidu_push_ios_secret_key_2
+        android-api-key: value_of_baidu_push_android_api_key_2
+        android-secret-key: value_of_baidu_push_android_secret_key_2
+  wechatpush:
+#    enabled: false
+    app-id: value_of_wechat_push_appid
+    app-secret: value_of_wechat_push_secret
+    token: token_for_receiving_messages_and_events
+    aes_key: aes_key_for_receiving_messages_and_events
+    templates:
+      recharge.id: AG4fyVzWK6JaNPWirQCngi08gsWRTTMZnWvnjOH0dvs # template.key: templateid
+      paid.id: 2XHjMm2UNEhbOgGyRKfeu1mArvm6NDXcCZtptCMUiss
+      paid.fail.id: jvyBFF1Bd7BHmpZEqHnOGkOaMJNouJyHneArN-IRlGE
+      platform.received.id: VlStJ_J4AwXbwHgJbSGVvbcfxoMNXhL0BpdB1fO6uUA
+      vip.card.activation: FbNL7htiKS7F1uHxuhfqpK1OyDjWU2k4qV0JTJrSuCQ
+      course.sign: fSrgwdL3PCMunBMjRbE4eOwXeFEr4bvFj3DBbmpV40k
+      consume: JOL4f2ixJ-jczVqz1y-TgHbxsENcwIVePatgx3Cq4h8
+      workflow: RwSKX8EsnkCbUnQ6kpZERp4_A7DEyq6aMWsKFehjdxQ
+  yunpian:
+    enabled: false
+    api-key: value_of_yunpian_api_key

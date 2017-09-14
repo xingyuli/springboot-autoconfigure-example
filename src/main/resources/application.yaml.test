@@ -1,0 +1,61 @@
+logging.level:
+  com.mobisist.springbootseed.autoconfigure: DEBUG
+  com.mobisist.components.messaging: DEBUG
+
+springbootseed.messaging:
+  baidupush:
+    # outermost configuration
+
+    # default value is false, uses dummy implementation which is useful for debugging purpose
+#    enabled: false
+
+#    ios-api-key: value_of_baidu_push_ios_api_key
+#    ios-secret-key: value_of_baidu_push_ios_secret_key
+
+    # default value is DEVELOPMENT
+#    ios-deploy-status: DEVELOPMENT
+
+#    android-api-key: value_of_baidu_push_android_api_key
+#    android-secret-key: value_of_baidu_push_android_secret_key
+
+    # multi configurations
+    configurations:
+      -
+        name: foo
+        # take precedence over the outermost 'enabled'
+        enabled: true
+        ios-api-key: value_of_baidu_push_ios_api_key_1
+        ios-secret-key: value_of_baidu_push_ios_secret_key_1
+        # take precedence over the outermost 'ios-deploy-status'
+        ios-deploy-status: PRODUCT
+        # shiyisheng shares dev and prod
+        android-api-key: 0EtOmM9BO4QAEvGlKkAMqSDX
+        android-secret-key: RzdaYNd3MiTSTCiRM2BDdHwMs1pbftmA
+      -
+        name: bar
+        enabled: true
+        ios-api-key: value_of_baidu_push_ios_api_key_2
+        ios-secret-key: value_of_baidu_push_ios_secret_key_2
+        # shiyisheng shares dev and prod
+        android-api-key: 0EtOmM9BO4QAEvGlKkAMqSDX
+        android-secret-key: RzdaYNd3MiTSTCiRM2BDdHwMs1pbftmA
+  wechatpush:
+    enabled: true
+    # health master dev
+    app-id: wx7c8f6ff0ca5409f9
+    app-secret: 13674b7d7cb0ccb387e11faeb87060c1
+#    token: token_for_receiving_messages_and_events
+#    aes_key: aes_key_for_receiving_messages_and_events
+    templates:
+      recharge.id: AG4fyVzWK6JaNPWirQCngi08gsWRTTMZnWvnjOH0dvs # template.key: templateid
+      paid.id: 2XHjMm2UNEhbOgGyRKfeu1mArvm6NDXcCZtptCMUiss
+      paid.fail.id: jvyBFF1Bd7BHmpZEqHnOGkOaMJNouJyHneArN-IRlGE
+      platform.received.id: VlStJ_J4AwXbwHgJbSGVvbcfxoMNXhL0BpdB1fO6uUA
+      vip.card.activation: FbNL7htiKS7F1uHxuhfqpK1OyDjWU2k4qV0JTJrSuCQ
+      course.sign: fSrgwdL3PCMunBMjRbE4eOwXeFEr4bvFj3DBbmpV40k
+      consume: JOL4f2ixJ-jczVqz1y-TgHbxsENcwIVePatgx3Cq4h8
+      workflow: RwSKX8EsnkCbUnQ6kpZERp4_A7DEyq6aMWsKFehjdxQ
+  yunpian:
+    enabled: true
+    # health master dev
+    api-key: 3776473bbb9b310652b755f7e5331b31
