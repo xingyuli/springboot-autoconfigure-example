@@ -1,2 +1,2 @@
 # springboot-autoconfigure-example
-Demo: 在项目中集成components-messaging，自动配置模块。
+Demo project of [springboot-autoconfigure](https://github.com/xingyuli/springboot-autoconfigure).
